@@ -1,0 +1,12 @@
+Create a database:
+    psql postgres # Log into a database
+    create database <db_name>
+    psql -d <db_name> -U <username>
+    create user <username> with encrypted password '<password>';
+    grant all privileges on database <db_name> to <username>;
+
+alter user <username> with superuser;
+
+pg_dump tmdb_db > tmdb_db_2020-10-10.sql
+
+psql -d <db_name> -U <username> -f "<sql file path>"
